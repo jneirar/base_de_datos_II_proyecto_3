@@ -57,7 +57,6 @@ class Comparator():
         # insertar puntos
         for i in range(self.n):
             self.idx.insert(i, tuple(self.vectors[i]))
-        print("Finish ini")
 
     def rangeSearchInd(self, file, r):
         if not os.path.isfile(file):
@@ -86,12 +85,13 @@ class Comparator():
             dist = numpy.linalg.norm(numpy.asarray(
                 vector0)-numpy.asarray(self.vectors[rangeValue]))
             if dist < r:
-                name = self.dict128VectorPhotos[str(
+                route = self.dict128VectorPhotos[str(
                     tuple(self.vectors[rangeValue]))]
-                result.append((name, dist))
-        result = sorted(result, key=lambda item: item[1])
+                name = route.split('/')[1]
+                result.append((route, name, dist))
+        result = sorted(result, key=lambda item: item[2])
         for par in result:
-            print(par[0], "\tdist:", par[1])
+            print(par[0], "\tname:", par[1], "\tdist:", par[2])
         print("Time in ms:", (end-start)*1000)
         return result
 
@@ -120,11 +120,12 @@ class Comparator():
         result = []
         for rangeValue in partialResult:
             if numpy.linalg.norm(numpy.asarray(vector0)-numpy.asarray(self.vectors[rangeValue[0]])) < r:
-                name = self.dict128VectorPhotos[str(
+                route = self.dict128VectorPhotos[str(
                     tuple(self.vectors[rangeValue[0]]))]
+                name = route.split('/')[1]
                 dist = rangeValue[1]
-                print(name, "\tdist:", rangeValue[1])
-                result.append(name)
+                print(route, "\tname:", name, "\tdist:", dist)
+                result.append((route, name, dist))
         print("Time in ms:", (end-start)*1000)
         return result
 
@@ -147,9 +148,13 @@ class Comparator():
         end = timer()
         result = []
         for KNNvalue in KNNvalues:
-            name = self.dict128VectorPhotos[str(tuple(self.vectors[KNNvalue]))]
-            print(name)
-            result.append(name)
+            route = self.dict128VectorPhotos[str(
+                tuple(self.vectors[KNNvalue]))]
+            name = route.split('/')[1]
+            dist = numpy.linalg.norm(numpy.asarray(
+                self.vectors[KNNvalue])-numpy.asarray(vector0))
+            print(route, "\tname:", name, "\tdist:", dist)
+            result.append((route, name, dist))
         print("Time in ms:", (end-start)*1000)
         return result
 
@@ -189,10 +194,11 @@ class Comparator():
 
         result = []
         for KNNvalue in partialResult:
-            name = self.dict128VectorPhotos[str(
+            route = self.dict128VectorPhotos[str(
                 tuple(self.vectors[KNNvalue[0]]))]
+            name = route.split('/')[1]
             dist = KNNvalue[1]
-            print(name, "\tdist:", dist)
-            result.append(name)
+            print(route, "\tname:", name, "\tdist:", dist)
+            result.append((route, name, dist))
         print("Time in ms:", (end-start)*1000)
         return result
