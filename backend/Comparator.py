@@ -17,7 +17,6 @@ path_data = "data.json"
 class Comparator():
     n = 0
     dict128VectorPhotos = {}
-    dictPhotos = {}
     vectors = []
 
     def __init__(self, N):
@@ -29,18 +28,11 @@ class Comparator():
         for key in self.dict128VectorPhotos:
             np = numpy.array(list(map(float, key.strip("()").split(', '))))
             self.vectors.append(np)
-            nameKey = self.dict128VectorPhotos[key].split('/')[1]
-            if nameKey not in self.dictPhotos:
-                self.dictPhotos[nameKey] = [np]
-            else:
-                self.dictPhotos[nameKey].append(np)
             cont = cont + 1
             if cont == N:
                 break
 
         self.n = len(self.vectors)
-
-        # print(self.dictPhotos.keys())
 
         # Configuration for RTree
         if os.path.isfile("128d_index.data"):
