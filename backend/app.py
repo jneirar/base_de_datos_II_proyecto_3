@@ -13,8 +13,7 @@ from Comparator import Comparator
 app = Flask(__name__, template_folder='../frontend/html/',
             static_folder='../frontend/')
 
-UPLOAD_FOLDER = './backend/UploadFotos'
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['UPLOAD_FOLDER'] = './Uploads'
 
 
 @app.route("/")
@@ -32,7 +31,9 @@ def KNNSearchInd(file, k):
 @app.route("/<file>/<k>", methods=['GET'])
 def KNNSearch(file, k):
     # TODO
-    res = comparator.KNNSearch(file, k)
+
+    res = comparator.KNNSearch(file, int(k))
+    
     return render_template('result.html', data = res)
 
 
@@ -59,7 +60,7 @@ def uploader():
   filename = secure_filename(f.filename)
   f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
   # Si se quiere eliminar el archivo usar remove(UPLOADS_PATH + filename)
-  # Retornamos una respuesta satisfactoria
+
   return redirect(url_for('KNNSearch', file = filename, k = k))
   
 

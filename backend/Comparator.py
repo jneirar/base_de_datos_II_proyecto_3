@@ -8,12 +8,13 @@ import linecache
 import io
 from rtree import index
 import os
+from os.path import join, dirname, realpath
 from queue import PriorityQueue
 from timeit import default_timer as timer
 
 path_data = "data.json"
 
-UPLOAD_PATH = './backend/UploadFotos/'
+UPLOAD_PATH = os.getcwd() + '/UploadFotos'
 
 
 class Comparator():
@@ -160,9 +161,10 @@ class Comparator():
             print("Archivo no encontrado")
             return []
         os.chdir(UPLOAD_PATH)
-        print(file)
         img = face_recognition.load_image_file(file)
         imgEncoding = face_recognition.face_encodings(img)
+        print("K: ", K)
+        print("Nombre archivo: ", file)
         if len(imgEncoding) == 0:
             print("No se pudo procesar la imagen")
             return []
