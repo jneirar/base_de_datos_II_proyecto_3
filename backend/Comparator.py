@@ -13,6 +13,8 @@ from timeit import default_timer as timer
 
 path_data = "data.json"
 
+UPLOAD_PATH = './backend/UploadFotos/'
+
 
 class Comparator():
     n = 0
@@ -51,9 +53,10 @@ class Comparator():
             self.idx.insert(i, tuple(self.vectors[i]))
 
     def rangeSearchInd(self, file, r):
-        if not os.path.isfile(file):
+        if not os.path.isfile(UPLOAD_PATH + file):
             print("Archivo no encontrado")
             return []
+        os.chdir(UPLOAD_PATH)
         img = face_recognition.load_image_file(file)
         imgEncoding = face_recognition.face_encodings(img)
         if len(imgEncoding) == 0:
@@ -88,9 +91,10 @@ class Comparator():
         return result
 
     def rangeSearch(self, file, r):
-        if not os.path.isfile(file):
+        if not os.path.isfile(UPLOAD_PATH + file):
             print("Archivo no encontrado")
             return []
+        os.chdir(UPLOAD_PATH)
         img = face_recognition.load_image_file(file)
         imgEncoding = face_recognition.face_encodings(img)
         if len(imgEncoding) == 0:
@@ -122,9 +126,10 @@ class Comparator():
         return result
 
     def KNNSearchInd(self, file, K):
-        if not os.path.isfile(file):
+        if not os.path.isfile(UPLOAD_PATH + file):
             print("Archivo no encontrado")
             return []
+        os.chdir(UPLOAD_PATH)
         img = face_recognition.load_image_file(file)
         imgEncoding = face_recognition.face_encodings(img)
         if len(imgEncoding) == 0:
@@ -151,9 +156,11 @@ class Comparator():
         return result
 
     def KNNSearch(self, file, K):
-        if not os.path.isfile(file):
+        if not os.path.isfile(UPLOAD_PATH + file):
             print("Archivo no encontrado")
             return []
+        os.chdir(UPLOAD_PATH)
+        print(file)
         img = face_recognition.load_image_file(file)
         imgEncoding = face_recognition.face_encodings(img)
         if len(imgEncoding) == 0:

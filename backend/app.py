@@ -6,33 +6,45 @@ from flask import (
     url_for,
     jsonify
 )
-app = Flask(__name__, template_folder='../frontend/',
+from werkzeug.utils import secure_filename
+import os
+from Comparator import Comparator
+
+app = Flask(__name__, template_folder='../frontend/html/',
             static_folder='../frontend/')
 
+UPLOAD_FOLDER = './backend/UploadFotos'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-@app.route("/", methods=['GET'])
-def KNNSearchInd():
+
+@app.route("/")
+def state():
+    return render_template('index.html')
+
+
+@app.route("/ind/<file>/<k>", methods=['GET'])
+def KNNSearchInd(file, k):
     # TODO
-    res = comparator.KNNSearchInd(file, K)
+    res = comparator.KNNSearchInd(file, k)
     return res
 
 
-@app.route("/", methods=['GET'])
-def KNNSearch():
+@app.route("/<file>/<k>", methods=['GET'])
+def KNNSearch(file, k):
     # TODO
-    res = comparator.KNNSearch(file, K)
-    return res
+    res = comparator.KNNSearch(file, k)
+    return render_template('result.html', data = res)
 
 
-@app.route("/", methods=['GET'])
-def rangeSearchInd():
+@app.route("/ind/<file>/<radius>", methods=['GET'])
+def rangeSearchInd(file, radius):
     # TODO
     res = comparator.rangeSearchInd(file, radius)
     return res
 
 
-@app.route("/", methods=['GET'])
-def rangeSearch():
+@app.route("/<file>/<radius>", methods=['GET'])
+def rangeSearch(file, radius):
     # TODO
     res = comparator.rangeSearch(file, radius)
     return res
@@ -42,12 +54,15 @@ def uploader():
  if request.method == 'POST':
   # obtenemos el archivo del input "archivo"
   f = request.files['archivo']
+  k = request.form['Kfotos']
+  print(k)
   filename = secure_filename(f.filename)
-  # Guardamos el archivo en el directorio "Archivos PDF"
   f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
   # Si se quiere eliminar el archivo usar remove(UPLOADS_PATH + filename)
   # Retornamos una respuesta satisfactoria
-  return redirect(url_for('after_upload', file = filename))
+  return redirect(url_for('KNNSearch', file = filename, k = k))
+  
+
 
 
 if __name__ == '__main__':
