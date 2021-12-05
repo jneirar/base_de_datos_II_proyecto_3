@@ -37,6 +37,18 @@ def rangeSearch():
     res = comparator.rangeSearch(file, radius)
     return res
 
+@app.route("/upload", methods=['POST'])
+def uploader():
+ if request.method == 'POST':
+  # obtenemos el archivo del input "archivo"
+  f = request.files['archivo']
+  filename = secure_filename(f.filename)
+  # Guardamos el archivo en el directorio "Archivos PDF"
+  f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+  # Si se quiere eliminar el archivo usar remove(UPLOADS_PATH + filename)
+  # Retornamos una respuesta satisfactoria
+  return redirect(url_for('after_upload', file = filename))
+
 
 if __name__ == '__main__':
     comparator = Comparator(13174)
