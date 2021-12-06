@@ -154,14 +154,14 @@ Steve Jobs           |  John_Sununu_0001.jpg | Bob_Beauprez_0001.jpg | George_W_
 
 >Gráfico:
 
-<img src="src/grafico3.png" width="300" /> 
+<img src="src/grafico3.png" width="600" /> 
 
 
 ## Búsqueda por rango
 
 <img src="src/tabla1.png" width="600" /> 
 
-<img src="src/grafico4.png" width="400" /> 
+<img src="src/grafico4.png" width="600" /> 
 
 # Análisis y discusión
 Las librerías de `face_recognition` y `rtree` contienen herramientas para trabajar el reconocimiento de rostros e indexación por `rtree`, los cuales son muy eficientes en las operaciones que realizan, y nos permiten adaptarlos a nuestros proyectos de acuerdo con nuestra necesidad.
