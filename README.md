@@ -80,7 +80,7 @@ La búsqueda KNN en el RTree funciona como se espera, por lo que no es necesario
 # Frontend
 
 
-# Expermientación
+# Experimentación
 Para testear las implementaciones, se usa una imagen de Steve Jobs como query. Instanciamos la clase Comparator con la cantidad de imágenes que deseamos procesar. Mientras más bajo sea el número de imágenes, menos parecidas serán las fotos. Por ejemplo, para 100 imágenes, los resultados son los siguientes:
 
 Steve Jobs           |  Bob_Huggins_0001.jpg | Paul_Wolfowitz_0003.jpg | Rick_Wagoner_0002.jpg 
