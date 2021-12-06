@@ -18,6 +18,7 @@
       * [Procesamiento de imágenes](#procesamiento-de-imágenes)
       * [Indexación de vectores característicos](#indexación-de-vectores-característicos)
       * [Búsqueda por rango y KNN secuencial](#búsqueda-por-rango-y-knn-secuencial)
+      * [Búsqueda por rango y KNN con el RTree](búsqueda-por-rango-y-knn-con-el-rtree)
 
     * [Frontend](#Frontend)
       * [HTML y CSS](#html-y-css)
@@ -77,7 +78,7 @@ La búsqueda por rango en el RTree requiere de dos puntos que representan un MBR
 La búsqueda KNN en el RTree funciona como se espera, por lo que no es necesario realizar alguna modificación como con la búsqueda por rango.
 
 # Frontend
-Para testear las implementaciones, se usa una imagen de Steve Jobs como query. Instanciamos la clase Comparator con la cantidad de imágenes que deseamos procesar. Mientras más bajo sea el número de imágenes, menos parecidas serán las fotos. Por ejemplo, para 100 imágenes, los resultados son los siguientes:
+
 
 # Expermientación
 Para testear las implementaciones, se usa una imagen de Steve Jobs como query. Instanciamos la clase Comparator con la cantidad de imágenes que deseamos procesar. Mientras más bajo sea el número de imágenes, menos parecidas serán las fotos. Por ejemplo, para 100 imágenes, los resultados son los siguientes:
