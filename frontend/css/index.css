@@ -1,0 +1,78 @@
+body{
+    background-color : rgb(43, 43, 43);
+}
+
+.parrafoInicio{
+    color : white;
+    font-family: arial;
+
+}
+.inicio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inicio img {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 40%;
+    height: 40%;
+}
+
+.cardP{
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-left: 31%;
+    background-color : rgb(58, 58, 58);
+    border: 5px solid rgb(102, 102, 102);
+    width:500px;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search{
+    color : white;
+    font-size: 12px;
+}
+input[type=”file”]#nuestroinput {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+    }
+
+#file::button{
+    background-color: aqua;
+}
+
+#numero{
+    size:1px;
+}
+
+.prev-image{
+    background-color : rgb(19, 19, 19);
+    height:300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.separator{
+    height:10px;
+    width: 40px;
+}
+
+#numero{
+    background-color : rgb(65, 64, 64);
+    border: transparent;
+    color : white;
+}

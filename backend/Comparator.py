@@ -14,7 +14,7 @@ from timeit import default_timer as timer
 
 path_data = "data.json"
 
-UPLOAD_PATH = os.getcwd() + '/UploadFotos'
+UPLOAD_PATH = os.getcwd() + '/instance/Uploads/'
 
 
 class Comparator():

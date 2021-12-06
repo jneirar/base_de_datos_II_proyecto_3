@@ -1,0 +1,25 @@
+body{
+    background-color : rgb(43, 43, 43);
+    margin-left : 4%;
+    margin-right : 5%;
+    margin-top: 3%;
+}
+
+.h1{
+    color : white;
+}
+
+.entry{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.resultP{
+    background-color : rgb(27, 27, 27);
+    border-radius: 20px;
+    width : 350px;
+    height : 320px;
+    
+}
