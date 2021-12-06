@@ -152,7 +152,7 @@ Steve Jobs           |  John_Sununu_0001.jpg | Bob_Beauprez_0001.jpg | George_W_
     </tbody>
 </table>
 
->Gráfico:
+### Gráfico:
 
 <img src="src/grafico3.png" width="600" /> 
 
@@ -160,6 +160,8 @@ Steve Jobs           |  John_Sununu_0001.jpg | Bob_Beauprez_0001.jpg | George_W_
 ## Búsqueda por rango
 
 <img src="src/tabla1.png" width="600" /> 
+
+### Gráfico:
 
 <img src="src/grafico4.png" width="600" /> 
 
