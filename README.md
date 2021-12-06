@@ -50,7 +50,7 @@ Debido a la cantidad de datos (casi 13000 imágenes), este proceso se realiza en
 
 Luego, realizamos un procesamiento de los vectores para determinar la distribución de distancias entre ellos en el archivo ~ `processing.py`. Para esto, se escoge un par de vectores aleatorios y se calcula la distancia entre ellos, esta operación se realiza unas 5000 veces, y el histograma obtenido es el siguiente.
 
-<img src="src/grafico1.png" width="400">
+<img src="src/grafico1.png" width="800">
 
 ## Indexación de vectores característicos
 Con la información obtenida, implementaremos nuestra clase Comparator.py, el cual implementará las funciones necesarias para obtener la información, así como su indexación con un RTree. En el constructor cargamos dos diccionarios:
