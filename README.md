@@ -22,8 +22,8 @@
 
     * [Frontend](#Frontend)
       * [HTML y CSS](#html-y-css)
-      * [JavaScript](#javascript)
       * [Bootstrap](#bootstrap)
+      * [JavaScript](#javascript)
 * [Experimentación](#experimentación)
   * [Búsqueda KNN](#búsqueda-KNN)
   * [Búsqueda por rango](#búsqueda-por-rango)
@@ -78,7 +78,21 @@ La búsqueda por rango en el RTree requiere de dos puntos que representan un MBR
 La búsqueda KNN en el RTree funciona como se espera, por lo que no es necesario realizar alguna modificación como con la búsqueda por rango.
 
 # Frontend
+En el front end encontramos dos páginas, una para la búsqueda de la imagen y la otra que muestra los resultados acorde a la query enviada.
 
+## HTML y CSS
+Se utilizó para las estructuras básicas de las páginas y los envíos de las querys. Además, dentro de la estructura encontramos el llamado a las funciones de Python que realizan la consulta y devuelven el resultado.
+
+<img src="src/frontend1.png" width="700" /> 
+
+
+## Bootstrap
+Se utilizó para las cards en las que se muestran los resultados, por lo que forma parte de la estetica de la página.
+<img src="src/frontend2.png" width="700" /> 
+<img src="src/frontend3.png" width="700" /> 
+
+## Javascript
+Se utilizó para la previsualización de la imagen al momento de elegir una para realizar la consulta.
 
 # Experimentación
 Para testear las implementaciones, se usa una imagen de Steve Jobs como query. Instanciamos la clase Comparator con la cantidad de imágenes que deseamos procesar. Mientras más bajo sea el número de imágenes, menos parecidas serán las fotos. Por ejemplo, para 100 imágenes, los resultados son los siguientes:
