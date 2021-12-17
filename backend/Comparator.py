@@ -167,7 +167,7 @@ class Comparator():
         print("Nombre archivo: ", file)
         if len(imgEncoding) == 0:
             print("No se pudo procesar la imagen")
-            return []
+            return 0
         vector0 = tuple(imgEncoding[0])
         print("Imagen:", file)
         print("K:", K)

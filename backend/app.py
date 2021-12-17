@@ -29,7 +29,10 @@ def KNNSearchInd(file, k):
     if(k < 1):
         k = 1
     res = comparator.KNNSearchInd(file, k)
-    return render_template('result.html', data = res, name = file)
+    error = ""
+    if (res == []):
+        error = "No envíaste ningún rostro, ve al inicio"
+    return render_template('result.html', data = res, name = file, error = error, n = k)
 
 
 @app.route("/<file>/<k>", methods=['GET'])
@@ -37,7 +40,12 @@ def KNNSearch(file, k):
     # TODO
 
     res = comparator.KNNSearch(file, int(k))
-    return render_template('result.html', data = res)
+    print(res)
+    error = ""
+    if (res == 0):
+        error = "No enviaste ningún rostro"
+        print("vacio")
+    return render_template('result.html', data = res, error = error)
 
 
 @app.route("/ind/<file>/<radius>", methods=['GET'])

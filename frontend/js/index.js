@@ -1,6 +1,6 @@
 const $seleccionArchivos = document.querySelector("#file"),
   $imagenPrevisualizacion = document.querySelector("#img-preview");
-
+  
 $seleccionArchivos.addEventListener("change", () => {
 
   const archivos = $seleccionArchivos.files;
@@ -15,4 +15,6 @@ $seleccionArchivos.addEventListener("change", () => {
   const objectURL = URL.createObjectURL(primerArchivo);
 
   $imagenPrevisualizacion.src = objectURL;
+
+  var change = document.getElementById("img-preview");
 });

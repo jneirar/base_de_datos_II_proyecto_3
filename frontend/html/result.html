@@ -12,18 +12,21 @@
         <a class = "logo" href = "http://127.0.0.1:5050/"><img src ="{{url_for('static', filename='/frontend/src/Logo.png')}}" width="500" ></a>
         </div>
         <div class = "resultP">
-        <h1 class = "h1" style = "margin-left: 15px;">Resultados para:</h1>
-        <div class="card" style="width: 18rem; margin-left: 15px;">
-            <img src = "{{url_for('static', filename='instance/Uploads/' + name)}}"class="card-img-top" alt="Result">
-            <div class="card-body">
-              <p class="card-text">File name: {{name}}</p>
-            </div>
+        <h1 class = "h1" style = "margin-left: 15px;">Resultados para</h1>
+        <div class="res">
+            <img src = "{{url_for('static', filename='instance/Uploads/' + name)}}"class="resImg" alt="Result">
           </div>
         </div>
         
         <br>
         <div class = "queryRes">
+        {% if error == "" %}
         <h2 style = "color:white;">Los resultados más parecidos son:</h2>
+        <h4 style = "color:white;">Número de resultados solicitados: {{n}}</h4>
+        {% else %}
+        <h2 style = "color:white;">{{error}}</h2>
+        <br>
+        {% endif %}
         <div class="row row-cols-1 row-cols-md-3 g-4">
             {% for i in data %}
                 <div class="col">
@@ -38,6 +41,7 @@
             {% endfor %}
         </div>
     </div>
+    <br>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

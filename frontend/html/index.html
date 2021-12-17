@@ -22,9 +22,12 @@
         </div>
         <div class = "separator"></div>
         <form class="card text-center" style = "background-color : rgb(43, 43, 43);"id = "form" action="/upload" method="POST" enctype="multipart/form-data">
-            <label class="card-body" style = "margin-left: 180px;">
-            <input id = "file" type="file" name="archivo" value = "https://smoda.elpais.com/wp-content/uploads/images/201429/20_celebrities_con_pecas__975139108.jpg">
-            </label>
+            <label class="card-body" style = "margin-left: 20px;">
+            <label class = "imgfile">
+            <input id = "file" type="file" name="archivo"  accept="image/png, .jpeg, .jpg" required>
+            Subir archivo
+            </label>    
+        </label>
             <div class="card-body">
             <p class="card-text" style = "color:white; background-color : rgb(92, 92, 92);">Cantidad de resultados</p>
             <div class = "separator"></div>

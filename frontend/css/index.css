@@ -41,15 +41,20 @@ body{
     color : white;
     font-size: 12px;
 }
-input[type=”file”]#nuestroinput {
-    width: 0.1px;
-    height: 0.1px;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: -1;
+input[type=file]#file {
+    display: none;
     }
-
+.imgfile {
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+        border: 1px solid transparent;
+        padding: 5px 80px;
+        font-size: 14px;
+        color: white;
+        border-radius: .25rem;
+        
+        cursor: pointer;
+    }
 #file::button{
     background-color: aqua;
 }
@@ -69,6 +74,11 @@ input[type=”file”]#nuestroinput {
 .separator{
     height:10px;
     width: 40px;
+}
+
+#img-preview{
+    width: auto;
+    height: 90%;
 }
 
 #numero{

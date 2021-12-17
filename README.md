@@ -92,7 +92,7 @@ Se utilizó para las cards en las que se muestran los resultados, por lo que for
 <img src="src/frontend3.png" width="700" /> 
 
 ## Javascript
-Se utilizó para la previsualización de la imagen al momento de elegir una para realizar la consulta.
+Se utilizó para la previsualización de la imagen al momento de elegir una para realizar la consulta. En otras palabras, que la imagen elegida se muestra en la pantalla principal.
 
 # Experimentación
 Para testear las implementaciones, se usa una imagen de Steve Jobs como query. Instanciamos la clase Comparator con la cantidad de imágenes que deseamos procesar. Mientras más bajo sea el número de imágenes, menos parecidas serán las fotos. Por ejemplo, para 100 imágenes, los resultados son los siguientes:
